@@ -1,7 +1,8 @@
-from platform import release
-from turtle import title
+
 import requests
 import json
+# to create csv file
+import pandas as pd
 
 url = 'https://www.gymshark.com/products.json?limit=250&page=1'
 
@@ -32,7 +33,7 @@ for item in shopData['products']:
     for variant in item['variants']:
         price = variant['price']
         available = variant['available']
-        print(price, available)
+      
          
 
         #individual product 
@@ -50,4 +51,7 @@ for item in shopData['products']:
         #add to list
         product_list.append(product)
 
-print(product_list)
+#exports list to csv
+df = pd.DataFrame(product_list)
+df.to_csv('gym_shark_products.csv')
+print('saved to file.')
