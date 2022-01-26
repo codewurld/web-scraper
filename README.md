@@ -1,4 +1,4 @@
-# web-scraper
+# Shopify Platform web-scraper
 
 Basic scraper python script to get back product details and availability from the GymShark store.
 
